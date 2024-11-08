@@ -7,7 +7,8 @@ def SumOfOddSubArr(arr: list[int]) -> int:
 
     total = 0
     for i in range(len(arr)):
-        last_index = len(arr) - (~((len(arr) - i) % 2) & 1)
+        # last_index = len(arr) - (~((len(arr) - i) % 2) & 1)
+        last_index = len(arr) + ((len(arr) - i) % 2) - 1
         while last_index > 0:
             for j in range(i, last_index):
                 total += arr[j]
